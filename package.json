@@ -1,0 +1,24 @@
+{
+  "name": "chinese-ancient-architecture",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5",
+    "three": "^0.162.0",
+    "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "@gltf-transform/core": "^3.10.1",
+    "@gltf-transform/extensions": "^3.0.0",
+    "@napi-rs/canvas": "^0.1.62",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "jsdom": "^29.0.2",
+    "vite": "^5.2.0"
+  }
+}

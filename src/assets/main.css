@@ -1,0 +1,126 @@
+/* ===== CSS Variables ===== */
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #3d3d3d;
+  --vermilion: #c0392b;
+  --vermilion-dark: #8b1a1a;
+  --paper: #f5f0e8;
+  --paper-dark: #e8e0d0;
+  --gold: #c9a961;
+  --gold-light: #dbb978;
+  --celadon: #7a9e7e;
+  --celadon-dark: #5a7e5e;
+  --jade: #4a7c59;
+  --shadow: rgba(0, 0, 0, 0.15);
+  --shadow-deep: rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Reset ===== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Noto Serif SC', serif;
+  background: var(--paper);
+  color: var(--ink);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--vermilion);
+  color: var(--paper);
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--paper-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--vermilion-dark);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vermilion);
+}
+
+/* ===== Typography ===== */
+h1, h2, h3, h4 {
+  font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+  letter-spacing: 0.1em;
+}
+
+/* ===== Layout Utilities ===== */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.section {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  padding: 8rem 0;
+  overflow: hidden;
+}
+
+/* ===== Reveal Animations ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Ink Brush Decorations ===== */
+.ink-decoration {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.08;
+  z-index: 0;
+}
+.ink-decoration.top-left {
+  top: -5%;
+  left: -5%;
+  width: 45%;
+}
+.ink-decoration.bottom-right {
+  bottom: -5%;
+  right: -5%;
+  width: 40%;
+  transform: rotate(180deg);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+  .section {
+    padding: 6rem 0;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  .section {
+    padding: 5rem 0;
+  }
+}
